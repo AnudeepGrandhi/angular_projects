@@ -1,0 +1,18 @@
+<h5>{{cartcount}}</h5>
+
+<h5>Checkout Details</h5>
+<table border="1" *ngIf="cartproducts.length>0">
+    <thead>
+        <tr>
+          <th>Product</th>
+          <th>Cart Count</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let checkout of cartproducts">
+        <td>{{checkout.product}}</td>
+        <td>{{checkout.count}}</td>
+        <button  (click)="register(checkout.product)">Remove</button>
+    </tr>
+    </tbody>
+</table>

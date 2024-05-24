@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "oneplus",
+      "tag": "Reliable",
+      "stocks": 0,
+      "availability": "no"
+    },
+    {
+      "id": 2,
+      "name": "samsung",
+      "tag": "Durable",
+      "stocks": 2,
+      "availability": "yes"
+    },
+    {
+      "id": 3,
+      "name": "iphone",
+      "tag": "Branded",
+      "stocks": 4,
+      "availability": "yes"
+    },
+    {
+      "id": 4,
+      "name": "redmi",
+      "tag": "china",
+      "stocks": 6,
+      "availability": "yes"
+    },
+    {
+      "name": "BlackBerry",
+      "stocks": 8,
+      "tag": "Consistent",
+      "id": 5
+    },
+    {
+      "name": "Lenovo",
+      "stocks": 3,
+      "tag": "Smart",
+      "id": 7
+    }
+  ]
+}

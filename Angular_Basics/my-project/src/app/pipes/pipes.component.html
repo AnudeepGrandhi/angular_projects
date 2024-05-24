@@ -1,0 +1,43 @@
+<h3>Angular Pipes!</h3>
+<p>{{"uppercase of 'ANGULAR Pipes' -"}} {{ "ANGULAR Pipes" | uppercase}}</p>
+<p>{{"lowercase of 'ANGULAR Pipes' -"}} {{ "ANGULAR Pipes" | lowercase}}</p>
+<p>{{"titlecase of 'ANGULAR Pipes' -"}} {{ "ANGULAR Pipes" | titlecase}}</p>
+
+<p>{{"currency of 25000 -"}} {{ 25000 | currency }}</p>
+<p>{{"currency:'CAD' of 25000 -"}} {{ 25000 | currency:'CAD' }}</p>
+<p>{{"currency:'CAD':'code' of 25000 -"}} {{ 25000 | currency:'CAD':'code' }} </p>
+<p>{{"currency:'CAD':'symbol':'6.2-3' of 25000.1234 -"}} {{ 25000.1234 | currency:'CAD':'symbol':'6.2-3'}}</p>
+<p>{{"currency:'CAD': 'symbol-narrow':'1.3' of 25000 -"}} {{ 25000 | currency:'CAD': 'symbol-narrow':'1.3'}}</p>
+<p>{{"currency:'CAD':'symbol':'6.3' of 250000 -"}} {{ 250000 | currency:'CAD':'symbol':'6.3'}}</p>
+<p>{{"currency:'CAD':'symbol':'6.3':'fr' of 250000 -"}} {{ 250000 | currency:'CAD':'symbol':'6.3':'fr'}}</p>
+<p>{{"currency:'INR':'symbol':'6.3' of 250000 -"}} {{ 250000 | currency:'INR':'symbol':'6.3'}}</p>
+
+<p>{{"date of '6/2/2017' -"}} {{ "6/2/2017" | date }}</p>
+<p>{{"date:'medium' of '6/2/2017, 11:30:45 AM' -"}} {{ "6/2/2017, 11:30:45 AM" | date:'medium' }}</p>
+<p>{{"date:'mmss' of '6/2/2017, 11:30:45 AM' -"}} {{ "6/2/2017, 11:30:45 AM" | date:'mmss' }}</p>
+<p>{{"date:'fullDate':'0':'fr' of '1/31/2018, 11:05:04 AM' -"}} {{"1/31/2018, 11:05:04 AM" | date:'fullDate':'0':'fr'}}</p>
+<p>{{"date of 90000000 -"}} {{ 90000000 | date }}</p>
+
+<p>{{"percent of 0.1 -"}} {{ 0.1 | percent }}</p> 
+<p>{{"percent:'2.2-3' of 0.1 -"}} {{ 0.1 | percent:'2.2-3' }}</p>
+<p>{{"percent:'2.2-3' of 0.1 -"}} {{ 0.1 | percent:'2.2-3': 'fr' }}</p>
+
+<p>{{"slice:2 of ['a','b','c','d'] -"}} {{ ['a','b','c','d']| slice:2}}</p>
+<p>{{"slice:1:3 of ['a','b','c','d'] -"}} {{ ['a','b','c','d']| slice:1:3}}</p>
+<p>{{"slice:3:6 of Laptop Charger -"}} {{ 'Laptop Charger'| slice:3:6}}</p>
+<p>{{"slice:-4 of Laptop Charger -"}} {{ 'Laptop Charger'| slice:-4}}</p>
+<p>{{"slice:-4:-2 of Laptop Charger -"}} {{ 'Laptop Charger'| slice:-4:-2}}</p>
+
+<p>{{"number of 25000 -"}} {{ 25000 | number }}</p>
+<p>{{"number:'.3-5' of 25000 -"}} {{ 25000 | number:'.3-5' }}</p>
+
+<p>Please select a value</p>
+<select #language (change)="language.value">
+    <option value="en">English</option>
+    <option value="fr">French</option>
+    <option value="es">Spanish</option>
+    <option value="de">German</option>
+  </select><br/><br/>
+<p>{{ 'fr' | i18nSelect: { 'en': 'Good Morning', 'fr': 'Bonjour', 'es': 'Buenos dÃƒÂ­as', 'de': 'Guten Morgen' } }}</p>
+
+<p>{{ 4 | i18nPlural: { '=4': ' # - Excellent', '=3': ' # - Good', '=2': '# - Average', 'other': ' # - Very Bad' } }}</p>

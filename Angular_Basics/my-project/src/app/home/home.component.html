@@ -1,0 +1,48 @@
+
+<div class="container">
+    <h5>{{myHeading}}</h5>
+    <input type="text" [(ngModel)] = "inputValue" (blur) = "filter()"><br/>
+    <h5>{{inputValue}}</h5>
+    <button class="btn btn-primary" [disabled]="enablebutton" (click) = "displayItems()">Display</button>
+    <p [innerHtml]="desc"></p>
+    <p [ngStyle] = "{'color' : color}">{{desc}}</p>
+
+    <div class="row" *ngIf="displayOnClick">
+       <div class="col-md-4" *ngFor="let product of productArray; let i = index" [ngSwitch]="product.availability">
+           <div class="card" style="width: 18rem;" [style.display] = "displayCard">
+             <img src="..." class="card-img-top" alt="...">
+             <div class="card-body">
+               <h3 class="card-title">{{product.name}}-{{i}}</h3>
+               <h5 class="card-subtitle mb-2 text-muted">{{product.tag}}</h5>
+
+               <h4 class="text-light text-danger" *ngSwitchCase="'no'">Not Available</h4>
+               <h4 class="text-light text-success" *ngSwitchCase="'yes'">Available</h4>
+               <h4 class="text-light text-info" *ngSwitchDefault>Arriving Soon</h4>
+
+               <h2 [ngClass]="{'text-danger': product.stocks===0, 'stock': product.stocks>0}">{{product.stocks}}</h2>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+               <button (click) = "incrementcount(product)" >Add to Cart</button>
+               <a href="#" class="btn btn-primary">Go somewhere</a>
+             </div>
+           </div>
+       </div>
+    </div>
+
+</div>
+
+<h2 class="text-danger" *ngIf="!displayOnClick; else welcome">*Please Click on Display </h2>
+
+<ng-template #welcome>
+ <h5>Welcome.....This is ng-template</h5>
+</ng-template>
+
+<div class="container">
+ <app-checkout [cartcount]="homecount" [checkout]="productname" (onRegister)="deleteProduct($event)"></app-checkout>
+</div>
+<br/><br/>
+
+<div *ngIf="productDelete">{{productDelete}}</div>
+
+
+
